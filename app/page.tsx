@@ -1,38 +1,41 @@
 export default function TimeOnHomepage() {
-  const emailLink =
-    "mailto:demiankerlous6@gmail.com?subject=TimeOn Inquiry&body=Hi Kerlous, I am interested in learning more about TimeOn.";
-  const phoneLink = "tel:7328819104";
+  const emailAddress = "demiankerlous6@gmail.com";
+  const phoneNumber = "7328819104";
+  const displayPhone = "(732) 881-9104";
+  const emailLink = `mailto:${emailAddress}?subject=TimeOn Inquiry&body=Hi Kerlous, I am interested in learning more about TimeOn.`;
+  const phoneLink = `tel:${phoneNumber}`;
 
   const services = [
     {
       title: "Answer Customer Questions",
       description:
-        "Give website visitors fast answers instead of making them wait for a call, email, or text back.",
+        "The chatbot responds to common questions in real time so visitors do not have to wait for a call, email, or text back.",
     },
     {
       title: "Collect The Right Details",
       description:
-        "Capture names, phone numbers, emails, service needs, preferred times, and customer requests.",
+        "It collects names, phone numbers, emails, service needs, preferred times, and customer requests during the conversation.",
     },
     {
       title: "Log Every Inquiry",
       description:
-        "Turn conversations into organized lead records so your business knows exactly who to follow up with.",
+        "Each conversation becomes a clear lead record so the business knows exactly who to follow up with and why.",
     },
   ];
 
   const steps = [
-    "A visitor asks a question",
-    "The chatbot handles the conversation",
+    "Visitor asks a question",
+    "Chatbot handles the conversation",
     "Customer details are collected",
-    "The business gets a clear lead record",
+    "Business receives a lead record",
   ];
 
   return (
-    <main className="min-h-screen bg-[#f7f3ec] text-[#161616] font-sans">
-      <header className="sticky top-0 z-50 border-b border-black/10 bg-[#f7f3ec]/90 backdrop-blur-xl">
+    <main id="top" className="min-h-screen bg-[#f7f3ec] text-[#161616] font-sans">
+      {/* Navigation */}
+      <header className="sticky top-0 z-50 border-b border-black/10 bg-[#f7f3ec]/95 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-          <a href="#home" className="text-xl font-bold tracking-tight">
+          <a href="#top" className="text-xl font-bold tracking-tight">
             TimeOn
           </a>
 
@@ -57,9 +60,10 @@ export default function TimeOnHomepage() {
         </div>
       </header>
 
-      <section id="home" className="relative overflow-hidden px-6 py-24 md:py-32">
+      {/* Hero */}
+      <section className="relative overflow-hidden px-6 py-24 md:py-32">
         <div className="pointer-events-none absolute right-0 top-0 h-[520px] w-[520px] rounded-full bg-[#d8c7ad]/40 blur-[120px]" />
-        <div className="pointer-events-none absolute left-0 top-[480px] h-[420px] w-[420px] rounded-full bg-white/70 blur-[120px]" />
+        <div className="pointer-events-none absolute left-0 top-[500px] h-[420px] w-[420px] rounded-full bg-white/70 blur-[120px]" />
 
         <div className="relative mx-auto grid max-w-6xl items-center gap-16 lg:grid-cols-2">
           <div>
@@ -103,7 +107,8 @@ export default function TimeOnHomepage() {
             </div>
           </div>
 
-          <div className="rounded-[32px] border border-black/10 bg-white/95 p-8 shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
+          {/* Demo Card */}
+          <div id="demo" className="scroll-mt-28 rounded-[32px] border border-black/10 bg-white/95 p-8 shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
             <div className="mb-8 flex items-center justify-between">
               <div>
                 <p className="text-sm text-[#777]">Website Chatbot</p>
@@ -162,6 +167,7 @@ export default function TimeOnHomepage() {
         </div>
       </section>
 
+      {/* Process */}
       <section className="px-6 pb-24">
         <div className="mx-auto max-w-6xl rounded-[36px] bg-[#161616] p-8 text-white shadow-xl md:p-10">
           <div className="grid gap-4 md:grid-cols-4">
@@ -175,7 +181,8 @@ export default function TimeOnHomepage() {
         </div>
       </section>
 
-      <section id="services" className="border-t border-black/10 px-6 py-24">
+      {/* Services */}
+      <section id="services" className="scroll-mt-28 border-t border-black/10 px-6 py-24">
         <div className="mx-auto max-w-6xl">
           <div className="mb-14 max-w-2xl">
             <p className="mb-5 text-sm font-medium text-[#7a5c35]">What We Build</p>
@@ -202,7 +209,8 @@ export default function TimeOnHomepage() {
         </div>
       </section>
 
-      <section id="demo" className="border-t border-black/10 px-6 py-24">
+      {/* Demo Section */}
+      <section className="border-t border-black/10 px-6 py-24">
         <div className="mx-auto max-w-5xl text-center">
           <p className="mb-5 text-sm font-medium text-[#7a5c35]">Demo</p>
           <h2 className="mb-8 text-4xl font-bold tracking-tight md:text-5xl">
@@ -235,7 +243,8 @@ export default function TimeOnHomepage() {
         </div>
       </section>
 
-      <section id="about" className="border-t border-black/10 px-6 py-24">
+      {/* Why */}
+      <section className="border-t border-black/10 px-6 py-24">
         <div className="mx-auto max-w-5xl text-center">
           <p className="mb-5 text-sm font-medium text-[#7a5c35]">Why TimeOn</p>
           <h2 className="mb-8 text-4xl font-bold leading-tight tracking-tight md:text-5xl">
@@ -247,7 +256,8 @@ export default function TimeOnHomepage() {
         </div>
       </section>
 
-      <section id="contact" className="border-t border-black/10 px-6 py-24">
+      {/* Contact */}
+      <section id="contact" className="scroll-mt-28 border-t border-black/10 px-6 py-24">
         <div className="mx-auto max-w-4xl rounded-[40px] border border-black/10 bg-white p-12 text-center shadow-sm md:p-16">
           <p className="mb-5 text-sm font-medium text-[#7a5c35]">Contact</p>
           <h2 className="mb-8 text-4xl font-bold leading-tight tracking-tight md:text-5xl">
@@ -257,19 +267,22 @@ export default function TimeOnHomepage() {
             Reach out to talk about building a system that helps your business respond faster, capture more leads, and handle customer inquiries automatically.
           </p>
 
-          <div className="mb-10 space-y-4 text-lg text-[#444]">
-            <p className="font-semibold text-[#161616]">Kerlous Demian</p>
+          <div className="mx-auto mb-10 max-w-md rounded-3xl border border-black/10 bg-[#fbf8f2] p-6 text-left">
+            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[#7a5c35]">
+              Business Contact
+            </p>
+            <p className="mb-3 text-2xl font-bold text-[#161616]">Kerlous Demian</p>
             <a
               href={emailLink}
-              className="block underline underline-offset-4 transition-colors hover:text-[#7a5c35]"
+              className="mb-3 block text-lg underline underline-offset-4 transition-colors hover:text-[#7a5c35]"
             >
-              demiankerlous6@gmail.com
+              {emailAddress}
             </a>
             <a
               href={phoneLink}
-              className="block underline underline-offset-4 transition-colors hover:text-[#7a5c35]"
+              className="block text-lg underline underline-offset-4 transition-colors hover:text-[#7a5c35]"
             >
-              (732) 881-9104
+              {displayPhone}
             </a>
           </div>
 
@@ -292,4 +305,3 @@ export default function TimeOnHomepage() {
     </main>
   );
 }
-npm run build
