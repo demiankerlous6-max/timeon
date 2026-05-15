@@ -4,11 +4,7 @@ export default function TimeOnHomepage() {
   const contactEmail = "demiankerlous6@gmail.com";
   const contactPhone = "7328819104";
 
-  const scrollToSection = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const openEmail = () => {
+    const openEmail = () => {
     window.location.href = `mailto:${contactEmail}?subject=TimeOn Inquiry&body=Hi Kerlous, I am interested in learning more about TimeOn.`;
   };
 
@@ -63,12 +59,12 @@ export default function TimeOnHomepage() {
             </a>
           </nav>
 
-          <button
-            onClick={() => scrollToSection("contact")}
+          <a
+            href="#contact"
             className="bg-[#161616] text-white px-5 py-2 rounded-full font-medium hover:scale-105 transition-transform"
           >
             Contact Us
-          </button>
+          </a>
         </div>
       </header>
 
@@ -88,19 +84,19 @@ export default function TimeOnHomepage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="bg-[#161616] text-white px-8 py-4 rounded-2xl font-semibold hover:scale-105 transition-transform"
+              <a
+                href="#contact"
+                className="bg-[#161616] text-white px-8 py-4 rounded-2xl font-semibold hover:scale-105 transition-transform text-center"
               >
                 Get Started
-              </button>
+              </a>
 
-              <button
-                onClick={() => scrollToSection("demo")}
-                className="border border-black/20 px-8 py-4 rounded-2xl font-semibold hover:bg-[#161616] hover:text-white transition-all"
+              <a
+                href="#demo"
+                className="border border-black/20 px-8 py-4 rounded-2xl font-semibold hover:bg-[#161616] hover:text-white transition-all text-center"
               >
                 See Demo
-              </button>
+              </a>
             </div>
 
             <div className="grid grid-cols-2 gap-4 max-w-md text-sm text-[#5f5f5f]">
@@ -176,6 +172,154 @@ export default function TimeOnHomepage() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative px-6 pb-24">
+        <div className="max-w-6xl mx-auto bg-[#161616] text-white rounded-[36px] p-8 md:p-10 shadow-xl">
+          <div className="grid md:grid-cols-4 gap-4">
+            {processSteps.map((step, index) => (
+              <div key={step} className="border border-white/10 rounded-2xl p-5 bg-white/5">
+                <p className="text-sm text-white/50 mb-3">Step {index + 1}</p>
+                <p className="font-semibold">{step}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="services" className="relative px-6 py-24 border-t border-black/10">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-14 max-w-2xl">
+            <p className="text-sm font-medium text-[#7a5c35] mb-5">
+              What We Build
+            </p>
+
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight tracking-tight">
+              A Better System For Handling Customers
+            </h2>
+
+            <p className="text-[#5f5f5f] text-lg leading-relaxed">
+              We build chatbots that guide the conversation, collect customer details, log the inquiry, and make sure the business knows exactly who to follow up with.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {services.map((service) => (
+              <div
+                key={service.title}
+                className="group bg-white border border-black/10 rounded-[28px] p-8 hover:-translate-y-2 hover:shadow-lg transition-all duration-300 shadow-sm"
+              >
+                <div className="w-12 h-12 rounded-2xl bg-[#d8c7ad] mb-6" />
+
+                <h3 className="text-2xl font-semibold mb-4">{service.title}</h3>
+
+                <p className="text-[#5f5f5f] leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="demo" className="px-6 py-24 border-t border-black/10">
+        <div className="max-w-5xl mx-auto text-center">
+          <p className="text-sm font-medium text-[#7a5c35] mb-5">
+            Demo
+          </p>
+
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 tracking-tight">
+            See How It Works
+          </h2>
+
+          <div className="bg-white border border-black/10 rounded-[32px] p-8 text-left max-w-3xl mx-auto shadow-sm">
+            <div className="space-y-6">
+              <div>
+                <p className="text-[#777] text-sm mb-2">Visitor</p>
+                <div className="bg-[#f1ece3] rounded-2xl p-4 inline-block max-w-[85%]">
+                  Hi, do you have availability this week?
+                </div>
+              </div>
+
+              <div className="flex justify-end">
+                <div className="bg-[#161616] text-white rounded-2xl p-4 max-w-[85%]">
+                  Yes. I can answer your questions, collect your details, and log the request for the business.
+                </div>
+              </div>
+
+              <div className="bg-[#fbf8f2] border border-black/10 rounded-2xl p-5 mt-8">
+                <p className="text-sm text-[#777] mb-2">Inquiry saved</p>
+                <p className="font-semibold">
+                  The chatbot logs the customer’s name, phone number, service needed, preferred time, and conversation details so the business has a clear record.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="vision" className="px-6 py-24 border-t border-black/10">
+        <div className="max-w-5xl mx-auto text-center">
+          <p className="text-sm font-medium text-[#7a5c35] mb-5">
+            Why TimeOn
+          </p>
+
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight tracking-tight">
+            Built To Help Businesses Respond Faster
+          </h2>
+
+          <p className="text-[#5f5f5f] text-lg max-w-3xl mx-auto leading-relaxed">
+            Customers expect fast responses. TimeOn helps businesses handle inquiries, organize customer information, and follow up without missing opportunities.
+          </p>
+        </div>
+      </section>
+
+      <section id="contact" className="px-6 py-24 border-t border-black/10">
+        <div className="max-w-4xl mx-auto text-center bg-white border border-black/10 rounded-[40px] p-12 md:p-16 shadow-sm">
+          <p className="text-sm font-medium text-[#7a5c35] mb-5">
+            Contact
+          </p>
+
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight tracking-tight">
+            Ready To Scale Your Business?
+          </h2>
+
+          <p className="text-[#5f5f5f] text-lg max-w-2xl mx-auto leading-relaxed mb-10">
+            Reach out to talk about building a system that helps your business respond faster, capture more leads, and handle customer inquiries automatically.
+          </p>
+
+          <div className="space-y-4 text-lg text-[#444] mb-10">
+            <p>Kerlous Demian</p>
+            <a
+              href="mailto:demiankerlous6@gmail.com?subject=TimeOn Inquiry&body=Hi Kerlous, I am interested in learning more about TimeOn."
+              className="block mx-auto hover:text-[#7a5c35] transition-colors underline underline-offset-4"
+            >
+              demiankerlous6@gmail.com
+            </a>
+            <a
+              href="tel:7328819104"
+              className="block mx-auto hover:text-[#7a5c35] transition-colors underline underline-offset-4"
+            >
+              (732) 881-9104
+            </a>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="mailto:demiankerlous6@gmail.com?subject=TimeOn Inquiry&body=Hi Kerlous, I am interested in learning more about TimeOn."
+              className="bg-[#161616] text-white px-8 py-4 rounded-2xl font-semibold hover:scale-105 transition-transform text-center"
+            >
+              Email Me
+            </a>
+
+            <a
+              href="tel:7328819104"
+              className="border border-black/20 px-8 py-4 rounded-2xl font-semibold hover:bg-[#161616] hover:text-white transition-all text-center"
+            >
+              Call Now
+            </a>
           </div>
         </div>
       </section>
